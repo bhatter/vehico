@@ -1,13 +1,11 @@
 class VehiclesController < ApplicationController
 
   def index
-    @vehicles = Vehicle.where(category: "car")
-    @vehicles = Vehicle.where(category: "scooter")
-    @vehicles = Vehicle.where(category: "bicycle")
+    @vehicles = Vehicle.where(category: params[:category])
   end
 
   def show
-    @vehicle = Vehicles.find(params[:id])
+    @vehicle = Vehicle.find(params[:id])
   end
 
   def new
