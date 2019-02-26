@@ -2,8 +2,10 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 200px 0;
   text-align: center;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .banner h1 {
@@ -19,4 +21,18 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+ html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
 }

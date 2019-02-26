@@ -8,14 +8,12 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "Add my Vehicle", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Book a new Vehicle", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "My Bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
+    <%= link_to "Add my Vehicle", new_vehicle_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Book a new Vehicle", vehicles_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" if user_signed_in? %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>
@@ -24,7 +22,17 @@
           </li>
           <li>
             <%= link_to "#" do %>
+              <i class="fa fa-cog"></i>  <%= t(".settings", default: "My Bookings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
               <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Logout") %>
             <% end %>
           </li>
         </ul>
@@ -37,9 +45,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Add my Vehicle</a></li>
-        <li><a href="#">Book a new Vehicle</a></li>
-        <li><a href="#">My Bookings</a></li>
+        <li><%= link_to "Add my Vehicle", new_vehicle_path %></li>
+        <li><%= link_to "Book a new Vehicle",  vehicles_path %></li>
       </ul>
     </div>
   </div>
