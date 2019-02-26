@@ -1,7 +1,7 @@
 <%= link_to vehicle_path(vehicle) do %>
 
   <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <%= image_tag vehicle.photo.url, height: 450, width: 600, crop: :fill %>
   <div class="card-trip-infos">
     <div>
       <h2><%= vehicle.description %></h2>
