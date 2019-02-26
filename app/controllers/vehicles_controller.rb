@@ -6,6 +6,7 @@ class VehiclesController < ApplicationController
 
   def show
     @vehicle = Vehicle.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -16,7 +17,7 @@ class VehiclesController < ApplicationController
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
     if @vehicle.save
-      redirect_to root_path
+      redirect_to vehicle_path(@vehicle)
     else
       render 'new'
     end

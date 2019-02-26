@@ -1,11 +1,14 @@
 <!-- <div class="container"> -->
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547010427-45f4b5a8092f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=839&q=80);">
     <div class="container">
-      <h1>Rent a <strong>vehicle</strong> via <strong>Vehico</strong>!</h1>
+      <h1>Rent a <strong>Vehicool</strong>!</h1>
       <p>Take it easy</p>
      <%= render 'shared/flashes' %>
-     <%= link_to "Signup", new_user_registration_path, class:"btn btn-primary"  %>
-     <%= link_to "Signin", new_user_session_path, class:"btn btn-success"  %>
+
+     <%= link_to "Signin", new_user_session_path, class:"btn btn-success" unless user_signed_in?  %>
+     <%= link_to "Signup", new_user_registration_path, class:"btn btn-primary" unless user_signed_in? %>
+    <%= link_to "Book a new Vehicool", category_path, class:"btn btn-danger" if user_signed_in?  %>
+
     </div>
   </div>
 
