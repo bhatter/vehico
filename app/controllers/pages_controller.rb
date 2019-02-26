@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def category
-
+    @vehicles = Vehicle.where(category: "car")
   end
 end
