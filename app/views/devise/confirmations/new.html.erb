@@ -1,26 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1478679998273-573b05e79e0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
-    <h2>Resend confirmation instructions</h2>
-
-    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-    <%= f.error_notification %>
-    <%= f.full_error :confirmation_token %>
-
-    <div class="form-inputs">
-      <%= f.input :email,
-      required: true,
-      autofocus: true,
-      value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-      input_html: { autocomplete: "email" } %>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4 col-lg-4 col-sm-offset-4">
+        <h2>Resend confirmation instructions</h2>
+        <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.full_error :confirmation_token %>
+        <div class="form-inputs">
+          <%= f.input :email,
+          required: true,
+          autofocus: true,
+          value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+          input_html: { autocomplete: "email" } %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Resend confirmation instructions" %>
+        </div>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Resend confirmation instructions" %>
-    </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
-
   </div>
 </div>
-

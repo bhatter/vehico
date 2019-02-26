@@ -1,12 +1,8 @@
 <div class="container">
-  <h1>Show all <%= params[:category] %>s</h1>
-
-  <% @vehicles.each do |vehicle| %>
-    <div>
-      <%= link_to vehicle_path(vehicle) do %>
-      <%= vehicle.description %>
-      <%= vehicle.price_day %>
-      </div>
-      <% end %>
-  <% end %>
+  <h1>Show all <%= params[:category].capitalize %>s</h1>
+  <div class="cards">
+    <% @vehicles.each do |vehicle| %>
+      <%= render 'vehicles/card', vehicle: vehicle %>
+    <% end %>
+  </div>
 </div>
