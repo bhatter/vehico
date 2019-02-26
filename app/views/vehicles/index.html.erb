@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Show all <%= params[:category].capitalize %>s</h1>
-
   <div class="cards">
     <% @vehicles.each do |vehicle| %>
       <%= render 'vehicles/card', vehicle: vehicle %>
