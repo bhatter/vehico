@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/category', to: 'pages#category', as: :category
   resources :vehicles do
     resources :bookings
   end
