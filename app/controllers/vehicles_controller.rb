@@ -1,6 +1,9 @@
 class VehiclesController < ApplicationController
+
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.where(category: "car")
+    @vehicles = Vehicle.where(category: "scooter")
+    @vehicles = Vehicle.where(category: "bicycle")
   end
 
   def show
