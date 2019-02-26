@@ -3,9 +3,9 @@
     <div class="container">
       <h1>Rent a <strong>vehicle</strong> via <strong>Vehico</strong>!</h1>
       <p>Take it easy</p>
-      <%= render 'shared/flashes' %>
-
-      <a class="btn btn-success" href="#">Subscribe now</a>
+     <%= render 'shared/flashes' %>
+     <%= link_to "Signup", new_user_registration_path, class:"btn btn-primary"  %>
+     <%= link_to "Signin", new_user_session_path, class:"btn btn-success"  %>
     </div>
   </div>
 
