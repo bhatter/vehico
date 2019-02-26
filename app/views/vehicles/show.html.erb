@@ -1,1 +1,11 @@
-<h1><%= @vehicle.description %></h1>
+<div class="container">
+    <br>
+    <div><%= @vehicle.description.capitalize %></div>
+    <br>
+    <div>Price Per Day: <%= @vehicle.price_day %></div>
+    <br>
+    <div><%= link_to "Book", root_path, class: "btn btn-primary" %></div>
+    <br>
+    <img src="https://images.unsplash.com/photo-1536364127590-1594e3161294?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="">
+
+</div>
