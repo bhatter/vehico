@@ -6,7 +6,7 @@
 
 .card-trip > img {
   height: 150px;
-  width: 200px;
+  width: 370px;
   object-fit: cover;
 }
 
@@ -58,8 +58,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-
 }
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -77,6 +78,9 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .vehicle-cards {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
   .cards {
     grid-template-columns: 1fr 1fr;
   }
@@ -98,7 +102,6 @@
 
 .cards :hover {
   text-decoration: underline;
-  font-size: 28px;
 }
 
 .profile-card {
@@ -128,4 +131,3 @@ justify-content: space-around;
 
 width: 300px;
 }
-
