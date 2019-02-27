@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png", height: 50 %>
+  <%= image_tag "logo.svg", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -18,27 +18,27 @@
         <% if user_signed_in? && current_user.photo&.url %>
         <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
-        <%= image_tag 'logo', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag 'nopictavatar.svg', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to user_path(current_user) do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+            <i class="fa fa-user"></i> &nbsp <%= t(".profile", default: "Profile") %>
             <% end %>
           </li>
           <li>
             <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "My Bookings") %>
+            <i class="fas fa-car"></i> &nbsp <%= t(".settings", default: "My Bookings") %>
             <% end %>
           </li>
           <li>
             <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+            <i class="fa fa-cog"></i> &nbsp <%= t(".settings", default: "Settings") %>
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Logout") %>
+            <i class="fas fa-sign-out-alt"></i> &nbsp <%= t(".sign_out", default: "Logout") %>
             <% end %>
           </li>
         </ul>
