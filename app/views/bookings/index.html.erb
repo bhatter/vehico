@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Show all Bookings for user</h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="booking-border-bottom">
+      Start Date: <%= booking.start_date %>
+      End Date: <%= booking.end_date %>
+      Status: <%= booking.status %>
+      Price: <%= booking.vehicle.price_day %>
+      Descripton: <%= booking.vehicle.description %>
+    </div>
+  <% end %>
+</div>
