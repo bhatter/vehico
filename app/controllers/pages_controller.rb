@@ -1,8 +1,6 @@
 class PagesController < ApplicationController
-  def home
-  end
+  skip_before_action :authenticate_user!, only: :home
 
-  def category
-    @vehicles = Vehicle.where(category: "car")
+  def home
   end
 end
