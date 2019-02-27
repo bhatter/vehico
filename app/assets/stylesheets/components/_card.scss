@@ -101,3 +101,33 @@
   font-size: 28px;
 }
 
+
+.profile-card {
+ margin: 80px 260px;
+display: flex;
+ padding: 40px;
+ background: white;
+border-radius: 30px;
+justify-content: space-around;
+}
+
+.profile-header{
+
+  text-align: left;
+  color: #EC3833;
+  font-size: 50px;
+
+
+}
+
+.profile-details h2 {
+ font-size: 22px;
+}
+
+#profile-avatar img {
+
+
+width: 300px;
+}
+
+
