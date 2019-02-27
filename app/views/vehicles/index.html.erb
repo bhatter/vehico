@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Show all <%= params[:category].capitalize %>s</h1>
-  <div class="cards">
+  <div class="cards vehicle-cards">
     <% @vehicles.each do |vehicle| %>
-      <%= render 'vehicles/card', vehicle: vehicle %>
+      <%= render './shared/card', vehicle: vehicle %>
     <% end %>
   </div>
 </div>
