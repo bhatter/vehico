@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.vehicle = @vehicle
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path
+      redirect_to user_bookings_path(current_user)
     else
       redirect_to vehicle_path(@vehicle)
     end
