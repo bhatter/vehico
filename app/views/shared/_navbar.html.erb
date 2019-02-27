@@ -14,10 +14,10 @@
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% if current_user && current_user.photo %>
-          <%= image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" if user_signed_in? %>
+        <% if user_signed_in? && current_user.photo&.url %>
+          <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
-          <%= image_tag 'logo', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" if user_signed_in? %>
+          <%= image_tag 'logo', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
