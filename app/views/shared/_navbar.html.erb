@@ -27,8 +27,9 @@
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
-            <i class="fas fa-car"></i> &nbsp <%= t(".settings", default: "My Bookings") %>
+            <%= link_to user_bookings_path(current_user) do %>
+            <i class="fa fa-cog"></i>  <%= t(".settings", default: "My Bookings") %>
+
             <% end %>
           </li>
           <li>
