@@ -1,9 +1,7 @@
 <div class="container">
-  <h1>Show all <%= params[:category]   %>s</h1>
+  <h1>Show all <%= params[:category].capitalize %>s</h1>
 
-
-
-  <form action="/vehicles" accept-charset="UTF-8" method="get">
+  <form action="/vehicles" accept-charset="UTF-8" method="get" class="form-container">
     <div class="form-group">
       <input name="utf8" type="hidden" value="✓">
     </div class="form-group">
@@ -16,7 +14,7 @@
     <div class="form-group">
       <input type="hidden" name="category" id="category" class="form-control" value=<%= params[:category] %>>
     </div>
-    <button type="submit class="btn btn-primary>Submit</button>
+    <button type="submit" class="btn btn-primary">Submit Filters</button>
   </form>
 
 
