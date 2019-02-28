@@ -2,6 +2,9 @@ class VehiclesController < ApplicationController
 
   def index
     @vehicles = Vehicle.where(category: params[:category])
+    @vehicles = @vehicles.where('city ILIKE ?', params[:city]) if params[:city].present?
+    @vehicles = @vehicles.where('price_day <= ?', params[:price_day]) if params[:price_day].present?
+
   end
 
   def show
