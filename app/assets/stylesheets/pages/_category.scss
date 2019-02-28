@@ -1,3 +1,14 @@
 .container h1{
     text-align: center;
 }
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.form-group {
+  padding-top: 5px;
+  margin-top: 0px;
+}
