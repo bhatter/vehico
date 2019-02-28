@@ -13,19 +13,37 @@ const ownerTabToggle = (f,p) => {
   f.classList.add("hide_booking");
 };
 
+const renterTabToggle2 = (x, y) => {
+
+  x.classList.remove("inactive");
+  x.classList.add("active");
+  y.classList.remove("active");
+  y.classList.add("inactive");
+};
+
+const ownerTabToggle2 = (f,p) => {
+  p.classList.remove("inactive");
+  p.classList.add("active");
+  f.classList.remove("active");
+  f.classList.add("inactive");
+};
 
 
 const addEventListenerToTabs = tab => {
   const renterTab = document.getElementById("renter-tab");
   const ownerTab = document.getElementById("owner-tab");
-  console.log(renterTab)
-  console.log(ownerTab)
   const renterBookings = document.getElementById("as_renter");
   const ownerBookings = document.getElementById("as_owner");
 
-  renterTab.addEventListener("click",  function() {renterTabToggle(renterBookings, ownerBookings)});
+  renterTab.addEventListener("click",  function() {
+    renterTabToggle(renterBookings, ownerBookings);
+    renterTabToggle2(renterTab, ownerTab);
+  });
 
-  ownerTab.addEventListener("click", function() {ownerTabToggle(renterBookings, ownerBookings)});
+  ownerTab.addEventListener("click", function() {
+    ownerTabToggle(renterBookings, ownerBookings);
+    ownerTabToggle2(renterTab, ownerTab);
+  });
 
 
 };

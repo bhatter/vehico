@@ -4,5 +4,4 @@ import "../plugins/flatpickr"
 // import { initUpdateNavbarOnScroll } from '../components/navbar';
 // initUpdateNavbarOnScroll();
 
-console.log("hello");
 addEventListenerToTabs();
