@@ -74,13 +74,23 @@
 }
 .tab:hover {
   opacity: 1;
+  color: #EE5557;
 }
 .tab.active {
   opacity: 1;
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
+  color: #EE5557;
   border-bottom: 5px solid #00A699;
+}
+
+.tab.inactive {
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 5px solid white;
 }
 
 .avatar-large {

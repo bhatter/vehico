@@ -9,6 +9,11 @@ class BookingsController < ApplicationController
   #   @booking = Booking.find(params[:id])
   # end
 
+  def update
+    @bookings = Booking.where(user: current_user)
+    @bookings_as_owner = Booking.where(vehicle: current_user.vehicles)
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @vehicle = Vehicle.find(params[:vehicle_id])

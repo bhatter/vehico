@@ -1,89 +1,87 @@
-  <div class="banner" style="background-color: white;">
-<div class="container">
+  <div class="banner" style="background-color: grey;">
+    <div class="container">
 
-  <h1 id= "testing123" >My bookings</h1>
+      <h1 id="title-booking">My bookings</h1>
 
-  <div class="tabs">
-    <div id="renter-tab">
-      <p class="tab active" >As renter</p>
-    </div>
-    <div id="owner-tab">
-      <p class="tab">As owner</p>
-    </div>
+      <div class="tabs">
+        <div>
+          <p class="tab" id="renter-tab">As renter</p>
+        </div>
+        <div>
+          <p class="tab" id="owner-tab">As owner</p>
+        </div>
 
-<!--     <a href="#" class="tab active">As renter</a>
-    <a href="#" class="tab">As owner</a> -->
-  </div>
-
-  <ul class="bookings_list" id="as_renter">
-    <% @bookings.each do |booking| %>
-    <li class="booking">
-      <% if booking.vehicle.user.photo&.url %>
-      <%= cl_image_tag booking.vehicle.user.photo.url(:bright_face), class: "avatar avatar-bordered" %>
-      <% else %>
-      <%= image_tag 'nopictavatar.svg', class: "avatar avatar-bordered" %>
-      <% end %>
-      <div class="booking-name">
-        <h3> <%= booking.vehicle.user.name %> </h3>
-        <p><%= booking.vehicle.city %></p>
-        <p><%= booking.start_date %> to <%= booking.end_date %></p>
       </div>
-      <div class="booking-body">
-        <p><strong> <%= booking.vehicle.category %></strong></p>
-        <p><%= booking.vehicle.description %></p>
-      </div>
-      <div>
-        <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
-      </div>
-      <div class="booking-status">
-        <% if booking.status == "accepted" %>
-        <p class="status accepted"> Status: <%= booking.status %> </p>
-        <% elsif booking.status == "declined" %>
-        <p class="status declined"> Status: <%= booking.status %> </p>
-        <% else %>
-        <p class="status pending"> Status: <%= booking.status %> </p>
+
+      <ul class="bookings_list" id="as_renter">
+        <% @bookings.each do |booking| %>
+        <li class="booking">
+          <% if booking.vehicle.user.photo&.url %>
+          <%= cl_image_tag booking.vehicle.user.photo.url(:bright_face), class: "avatar avatar-bordered" %>
+          <% else %>
+          <%= image_tag 'nopictavatar.svg', class: "avatar avatar-bordered" %>
+          <% end %>
+          <div class="booking-name">
+            <h3> <%= booking.vehicle.user.name %> </h3>
+            <p><%= booking.vehicle.city %></p>
+            <p><%= booking.start_date %> to <%= booking.end_date %></p>
+          </div>
+          <div class="booking-body">
+            <p><strong> <%= booking.vehicle.category %></strong></p>
+            <p><%= booking.vehicle.description %></p>
+          </div>
+          <div>
+            <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
+          </div>
+          <div class="booking-status">
+            <% if booking.status == "accepted" %>
+            <p class="status accepted"> Status: <%= booking.status %> </p>
+            <% elsif booking.status == "declined" %>
+            <p class="status declined"> Status: <%= booking.status %> </p>
+            <% else %>
+            <p class="status pending"> Status: <%= booking.status %> </p>
+            <% end %>
+            <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
+          </div>
+        </li>
         <% end %>
-        <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
-      </div>
-    </li>
-    <% end %>
-  </ul>
+      </ul>
 
-  <ul class="bookings_list" id="as_owner">
-    <% @bookings_as_owner.each do |booking| %>
-    <li class="booking">
-      <% if booking.user.photo&.url %>
-      <%= cl_image_tag booking.user.photo.url(:bright_face), class: "avatar avatar-bordered" %>
-      <% else %>
-      <%= image_tag 'nopictavatar.svg', class: "avatar avatar-bordered" %>
-      <% end %>
-      <div class="booking-name">
-        <h3> <%= booking.user.name %> </h3>
-        <p><%= booking.vehicle.city %></p>
-        <p><%= booking.start_date %> to <%= booking.end_date %></p>
-      </div>
-      <div class="booking-body">
-        <p><strong> <%= booking.vehicle.category %> </strong></p>
-        <p><%= booking.vehicle.description %></p>
-      </div>
-      <div>
-        <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
-      </div>
-      <div class="booking-status">
-        <% if booking.status == "accepted" %>
-        <p class="status accepted"> Status: <%= booking.status %> </p>
-        <% elsif booking.status == "declined" %>
-        <p class="status declined"> Status: <%= booking.status %> </p>
-        <% else %>
-        <p class="status pending"> Status: <%= booking.status %> </p>
+      <ul class="bookings_list" id="as_owner">
+        <% @bookings_as_owner.each do |booking| %>
+        <li class="booking">
+          <% if booking.user.photo&.url %>
+          <%= cl_image_tag booking.user.photo.url(:bright_face), class: "avatar avatar-bordered" %>
+          <% else %>
+          <%= image_tag 'nopictavatar.svg', class: "avatar avatar-bordered" %>
+          <% end %>
+          <div class="booking-name">
+            <h3> <%= booking.user.name %> </h3>
+            <p><%= booking.vehicle.city %></p>
+            <p><%= booking.start_date %> to <%= booking.end_date %></p>
+          </div>
+          <div class="booking-body">
+            <p><strong> <%= booking.vehicle.category %> </strong></p>
+            <p><%= booking.vehicle.description %></p>
+          </div>
+          <div>
+            <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
+          </div>
+          <div class="booking-status">
+            <% if booking.status == "accepted" %>
+            <p class="status accepted"> Status: <%= booking.status %> </p>
+            <% elsif booking.status == "declined" %>
+            <p class="status declined"> Status: <%= booking.status %> </p>
+            <% else %>
+            <p class="status pending"> Status: <%= booking.status %> </p>
+            <% end %>
+            <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
+          </div>
+        </li>
         <% end %>
-        <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
-      </div>
-    </li>
-    <% end %>
-  </ul>
+      </ul>
 
-</div>
+    </div>
 
   </div>
 
