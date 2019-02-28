@@ -43,6 +43,9 @@
             <% end %>
             <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
           </div>
+          <div>
+            <%= link_to "X", user_booking_path(booking.user, booking), method: :delete %>
+          </div>
         </li>
         <% end %>
       </ul>
