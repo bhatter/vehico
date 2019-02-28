@@ -8,7 +8,9 @@
       <p><%= vehicle.city %></p>
     </div>
     <h2 class="card-trip-pricing">$ <%= vehicle.price_day %></h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+    <%= cl_image_tag vehicle.user.photo.url(:bright_face), class:"card-trip-user avatar-bordered"%>
+<!--     <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/> -->
   </div>
 </div>
 <% end %>
+
