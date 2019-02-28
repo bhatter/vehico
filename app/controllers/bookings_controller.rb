@@ -2,11 +2,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user: current_user)
+    @bookings_as_owner = Booking.where(vehicle: current_user.vehicles)
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
+  # def show
+  #   @booking = Booking.find(params[:id])
+  # end
 
   def create
     @booking = Booking.new(booking_params)
