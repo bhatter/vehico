@@ -12,5 +12,18 @@
 
     <br>
   <%= cl_image_tag @vehicle.photo.url, height: 250, width: 300, crop: :fill %>
+
+
+<h1>Booking</h1>
+<div class="booking-card">
+  <div class="booking-details">
+    <p><strong>Description:</strong> <%= @vehicle.description.capitalize %></p>
+    <p><strong>Daily price:</strong> <%= @vehicle.price_day %></p>
+    <p>Total Price</p>
+  </div>
+  <div id="photo-vehicle">
+  <%= cl_image_tag @vehicle.photo.url %>
+  </div>
+</div>
 </div>
 

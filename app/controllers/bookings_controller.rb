@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
     @vehicle = Vehicle.find(params[:vehicle_id])
     @booking.vehicle = @vehicle
     @booking.user = current_user
+    @booking.price =
     if @booking.save
       redirect_to user_bookings_path(current_user)
     else
