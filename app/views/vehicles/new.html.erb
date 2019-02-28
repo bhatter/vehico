@@ -5,7 +5,7 @@
   <h1>Post my Vehicool</h1>
   <%= simple_form_for(@vehicle) do |f| %>
       <%= f.input :description %>
-      <%= f.input :category %>
+      <%= f.input :category, collection: ["car" ,"bicycle" ,"scooter" ,"van"] %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.input :city %>
