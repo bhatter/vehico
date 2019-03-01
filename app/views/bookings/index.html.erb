@@ -1,6 +1,6 @@
-  <div class="banner" style="background-color: grey;">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1494363458195-0ce73b1afede?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
     <div class="container">
-
+      <div class="container-fluid container-booking">
       <h1 id="title-booking">My bookings</h1>
 
       <div class="tabs">
@@ -8,7 +8,7 @@
           <p class="tab" id="renter-tab">As renter</p>
         </div>
         <div>
-          <p class="tab" id="owner-tab">As owner</p>
+          <p class="tab" id="owner-tab" >As owner</p>
         </div>
 
       </div>
@@ -41,9 +41,9 @@
             <% else %>
             <p class="status pending"> Status: <%= booking.status %> </p>
             <% end %>
-            <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
+            <p id="color-black"><%= booking.vehicle.price_day %> $/day</p>
           </div>
-          <div>
+          <div class="booking-action">
             <%= link_to "Delete", user_booking_path(booking.user, booking), method: :delete %>
           </div>
         </li>
@@ -78,9 +78,9 @@
             <% else %>
             <p class="status pending"> Status: <%= booking.status %> </p>
             <% end %>
-            <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
+            <p id="color-black"><%= booking.vehicle.price_day %> $/day </p>
           </div>
-          <div>
+          <div class="booking-action">
             <% if booking.status == "pending" %>
             <%= link_to "Confirm", vehicle_booking_path(booking.vehicle.id, booking.id, :param1 => 'accepted'), method: :patch %>
             <br>
@@ -90,6 +90,7 @@
         </li>
         <% end %>
       </ul>
+      </div>
 
     </div>
 

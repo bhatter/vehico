@@ -35,6 +35,9 @@ const addEventListenerToTabs = tab => {
   const renterBookings = document.getElementById("as_renter");
   const ownerBookings = document.getElementById("as_owner");
 
+  renterTabToggle(renterBookings, ownerBookings);
+  renterTabToggle2(renterTab, ownerTab);
+
   renterTab.addEventListener("click",  function() {
     renterTabToggle(renterBookings, ownerBookings);
     renterTabToggle2(renterTab, ownerTab);
