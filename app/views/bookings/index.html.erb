@@ -27,8 +27,7 @@
             <p><%= booking.start_date %> to <%= booking.end_date %></p>
           </div>
           <div class="booking-body">
-            <p><strong> <%= booking.vehicle.category %></strong></p>
-            <p><%= booking.vehicle.description %></p>
+            <p><%= booking.vehicle.title %></p>
           </div>
           <div>
             <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
@@ -64,8 +63,7 @@
             <p><%= booking.start_date %> to <%= booking.end_date %></p>
           </div>
           <div class="booking-body">
-            <p><strong> <%= booking.vehicle.category %> </strong></p>
-            <p><%= booking.vehicle.description %></p>
+            <p><%= booking.vehicle.title %></p>
           </div>
           <div>
             <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
