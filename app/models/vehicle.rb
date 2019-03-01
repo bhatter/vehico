@@ -3,5 +3,5 @@ class Vehicle < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
   mount_uploader :photo, PhotoUploader
-  validates :photo, :description, :city, :price_day, :category, presence: true
+  validates :photo, :description, :city, :price_day, :category, :title, presence: true
 end
