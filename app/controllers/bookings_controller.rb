@@ -10,8 +10,17 @@ class BookingsController < ApplicationController
   # end
 
   def update
-    @bookings = Booking.where(user: current_user)
-    @bookings_as_owner = Booking.where(vehicle: current_user.vehicles)
+  if params[:param1] == "accepted"
+    @booking = Booking.find(params[:id])
+    @booking.status = "confirmed"
+    @booking.save
+    redirect_to user_bookings_path(current_user)
+  else
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+    @booking.save
+    redirect_to user_bookings_path(current_user)
+  end
   end
 
   def create
@@ -39,4 +48,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
+
 end
