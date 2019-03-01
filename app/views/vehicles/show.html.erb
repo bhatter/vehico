@@ -1,26 +1,26 @@
-<div class="container">
-
-  <div class="booking-card">
-  <div class="booking-details">
-
-  </div>
-  <div id="photo-vehicle">
-    <%= cl_image_tag @vehicle.photo.url %>
-  </div>
-  <div class="booking-details">
-    <h1>Booking</h1>
-    <p><strong>Description:</strong> <%= @vehicle.description.capitalize %></p>
-    <p><strong>Daily price:</strong> <%= @vehicle.price_day %></p>
-    <p>Total Price</p>
-  </div>
-</div>
-</div>
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-
-    <%= simple_form_for ([@vehicle, @booking]) do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Book Vehicool", class: "btn btn-primary" %>
-    <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1496224303445-89779ef1ed23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80);">
+  <div class="container-fluid bg-show-vehicle">
+    <div class="col-md-4 col-sm-12">
+        <%= cl_image_tag @vehicle.photo.url, width: "100%", height: "auto"%>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="booking-details">
+        <h1><%= @vehicle.category  %></h1> <br>
+        <p><%= @vehicle.description.capitalize %></p>
+        <p><%= @vehicle.price_day %> $/day</p>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+      <div class="form-wrapper" style="margin: 0 auto;">
+        <%= simple_form_for ([@vehicle, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Book Vehicool", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
+
+

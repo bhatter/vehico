@@ -1,40 +1,41 @@
 .booking-card {
   display: flex;
-  justify-content: space-around;
+  justify-content: center
 
 }
 
-#photo-vehicle img{
+
+
+.booking-details {
+border-radius: 5px;
+padding: 5%;
+}
+
+.booking-details p {
+  font-size: 30px;
+  color: black;
+}
+
+.booking-details h1{
+color: #EE5557;
+
+}
+.bg-show-vehicle {
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: white;
+  opacity: 0.96;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+
+img{
   background-size: cover;
   background-position: center;
   align-items: center;
   height: 50%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-
+  border-radius: 5px;
+  opacity: 1;
 }
-
-.booking-details {
-padding-left: 42px;
-padding-right: 100px;
-position: absolute;
-text-align: left;
-top: 135px;
-right: 164px;
-background: white;
-border-radius: 5px;
-font-size: 20px;
-background-color: rgba(0,0,0,0.3);
-
-}
-
-.booking-details p {
-  margin: 40px 0px;
-  font-size: 30px;
-}
-
-.booking-details h1{
-color: black;
 
 }
