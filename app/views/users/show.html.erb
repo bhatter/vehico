@@ -1,31 +1,19 @@
+
+
 <div class="container">
-  <h1>Show all my vehicles</h1>
-  <div class="container1">
-    <div class="cards vehicle-cards">
-      <% current_user.vehicles.each do |vehicle| %>
-      <%= render './shared/card', vehicle: vehicle %>
-      <% end %>
+  <h1>Show all my Vehicles</h1>
+</div>
+<div class="container1">
+  <div class="cards vehicle-cards">
+    <% current_user.vehicles.each do |vehicle| %>
+    <%= render './shared/card', vehicle: vehicle %>
+    <% end %>
     </div>
-  </div>
 </div>
 
 
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547010427-45f4b5a8092f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=839&q=80);">
-  <div class="container">
-    <div class="container-profile">
-      <div class="profile-card">
-        <div>
-          <div id="profile-avatar">
-            <%= cl_image_tag current_user.photo.url(:bright_face) %>
-          </div>
-          <div class ="profile-details">
-            <h2><strong>Name:</strong> <%= @user.name %> </h2>
-            <h2><strong>Email:</strong> <%=  @user.email %>  </h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+

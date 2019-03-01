@@ -105,12 +105,13 @@
 }
 
 .profile-card {
- margin: 80px 260px;
+ margin: 32px -2px;
 display: flex;
- padding: 40px;
+ padding: 16px;
  background: white;
-border-radius: 30px;
-justify-content: space-around;
+border-radius: 15px;
+align-items: center;
+
 }
 
 .profile-header{
@@ -124,10 +125,17 @@ justify-content: space-around;
 
 .profile-details h2 {
  font-size: 22px;
+ display: inline-block;
+ display: flex;
+ color: black;
 }
 
 #profile-avatar img {
 
 
-width: 300px;
+width: 105px;
+}
+
+#profile-avatar {
+  margin: auto;
 }
