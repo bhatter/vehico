@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :vehicles do
     resources :bookings
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
   resources :user do
     resources :bookings
   end
