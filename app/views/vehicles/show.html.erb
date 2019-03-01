@@ -5,6 +5,7 @@
     </div>
     <div class="col-md-4 col-sm-12">
       <div class="booking-details">
+        <div class="avatar-circle-show"><%= cl_image_tag @vehicle.user.photo.url(:bright_face)%></div>
         <h1><%= @vehicle.title  %></h1> <br>
         <p><%= @vehicle.description.capitalize %></p>
         <p><%= @vehicle.price_day %> $/day</p>
