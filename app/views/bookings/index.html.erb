@@ -34,7 +34,7 @@
             <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
           </div>
           <div class="booking-status">
-            <% if booking.status == "accepted" %>
+            <% if booking.status == "confirmed" %>
             <p class="status accepted"> Status: <%= booking.status %> </p>
             <% elsif booking.status == "declined" %>
             <p class="status declined"> Status: <%= booking.status %> </p>
@@ -44,7 +44,7 @@
             <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
           </div>
           <div>
-            <%= link_to "X", user_booking_path(booking.user, booking), method: :delete %>
+            <%= link_to "Delete", user_booking_path(booking.user, booking), method: :delete %>
           </div>
         </li>
         <% end %>
@@ -71,7 +71,7 @@
             <%= cl_image_tag booking.vehicle.photo.url, crop: :fill, class: "vehicle_small" %>
           </div>
           <div class="booking-status">
-            <% if booking.status == "accepted" %>
+            <% if booking.status == "confirmed" %>
             <p class="status accepted"> Status: <%= booking.status %> </p>
             <% elsif booking.status == "declined" %>
             <p class="status declined"> Status: <%= booking.status %> </p>
@@ -80,6 +80,13 @@
             <% end %>
             <p class="price"> Daily Price: <%= booking.vehicle.price_day %> </p>
           </div>
+          <div>
+            <% if booking.status == "pending" %>
+            <%= link_to "Confirm", vehicle_booking_path(booking.vehicle.id, booking.id, :param1 => 'accepted'), method: :patch %>
+            <br>
+            <%= link_to "Decline", vehicle_booking_path(booking.vehicle.id, booking.id), method: :patch %>
+          </div>
+            <% end %>
         </li>
         <% end %>
       </ul>
