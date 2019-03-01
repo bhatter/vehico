@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Show all <%= params[:category].capitalize %>s</h1>
+  <h1>All <%= params[:category].capitalize %>s</h1>
 
   <div class="container1">
     <form action="/vehicles" accept-charset="UTF-8" method="get" class="form-container">
@@ -16,7 +16,7 @@
         <input type="hidden" name="category" id="category" class="form-control" value=<%= params[:category] %>>
       </div>
       <div class="container1">
-        <button type="submit" class="btn btn-primary">Submit Filters</button>
+        <button type="submit" class="btn btn-primary">Search</button>
       </div>
     </form>
   </div>
